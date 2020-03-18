@@ -1,7 +1,8 @@
 'use strict'
 
 // Agregar las variables de .env a las variables de entorno
-require('dotenv').config({ path: require('path').join(__dirname, '.env') });
+//require('dotenv').config({ path: require('path').join(__dirname, '.env') });
+require('dotenv').config();
 
 const
   express = require('express'),
