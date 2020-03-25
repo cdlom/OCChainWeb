@@ -37,14 +37,14 @@ class QuieroColaborar extends Component {
   renderError() {
     if (this.props.errorCaptcha) {
       return (
-        <Message error header='Verificación' content='Por favor verifique el Captcha' />
+        <Message error header='Captcha' content='Please, check Captcha' />
       )
     }
   }
 
   render() {
 
-    const text = `Formulario de contacto.`
+    const text = `Contact Form.`
     const { onSetFormVal } = this.props;
     const { name, email, telephone, subject, message } = this.props.form;
 
@@ -76,27 +76,27 @@ class QuieroColaborar extends Component {
                          Contact Us</p>
 
                             <Form.Field required>
-                                  <Input maxLength="45" label="Nombre y apellido" placeholder='Nombre y apellido' value={name} type='text' onChange={(data) => { onSetFormVal('name', data.target.value) }} required />
+                                  <Input maxLength="45" label="Your Name" placeholder='Name' value={name} type='text' onChange={(data) => { onSetFormVal('name', data.target.value) }} required />
                              </Form.Field>
                             <Form.Group widths="equal">
                                  <Form.Field required>
-                                       <Input maxLength="45" label="Email" placeholder='usuario@mail.com' value={email} type='email' onChange={(data) => { onSetFormVal('email', data.target.value) }} required />
+                                       <Input maxLength="45" label="Your Email" placeholder='user@mail.com' value={email} type='email' onChange={(data) => { onSetFormVal('email', data.target.value) }} required />
                                   </Form.Field>
                                   <Form.Field required>
-                                       <Input maxLength="45" label="Teléfono" value={telephone} type="text" onChange={(data) => { onSetFormVal('telephone', data.target.value) }} required />
+                                       <Input maxLength="45" label="Phone Number" value={telephone} type="text" onChange={(data) => { onSetFormVal('telephone', data.target.value) }} required />
                                   </Form.Field>
                              </Form.Group>
                              <Form.Field required>
-                                   <Input maxLength="45" label="Asunto" placeholder='Asunto' value={subject} type='text' onChange={(data) => { onSetFormVal('subject', data.target.value) }} required />
+                                   <Input maxLength="45" label="Subject" placeholder='Asunto' value={subject} type='text' onChange={(data) => { onSetFormVal('subject', data.target.value) }} required />
                              </Form.Field>
-                             <Form.Field control={TextArea} label='Mensaje' placeholder='Tu mensaje aquí...' value={message} onChange={(data) => { onSetFormVal('message', data.target.value) }} required />
+                             <Form.Field control={TextArea} label='Message' placeholder='Your message here...' value={message} onChange={(data) => { onSetFormVal('message', data.target.value) }} required />
                             <Recaptcha
                                   sitekey={process.env.REACT_APP_SITE_KEY}
                                   render="explicit"
                                   verifyCallback={this.verifyCallback}
                                  hl='es-419'
                               />
-                               <p><Button type="reset" onClick={this.props.onCancel}>Cancelar</Button> <Button type="submit">Enviar!</Button></p>
+                               <p><Button type="reset" onClick={this.props.onCancel}>Cancel</Button> <Button type="submit">Send!</Button></p>
                     </Form>      
 
 
